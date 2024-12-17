@@ -38,8 +38,13 @@ h2 {
 
 .spreadsheet td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 8px ;
     background-color: #ffffff;
+    max-width: 120px;
+    word-wrap: break-word;
+    white-space: normal;
+
+
 }
 
 .spreadsheet tr:hover {
