@@ -135,16 +135,10 @@
 
         async function loadImages() {
             try {
-                const response = await fetch('pictures/bday/');
+                const response = await fetch('pictures/bday/images.json');
                 if (!response.ok) throw new Error('Network response was not ok');
-                const text = await response.text();
-                const parser = new DOMParser();
-                const htmlDocument = parser.parseFromString(text, 'text/html');
-                images = Array.from(htmlDocument.querySelectorAll('a'))
-                    .map(a => a.getAttribute('href'))
-                    .filter(href => /\.(JPG|jpeg|png|gif)$/.test(href)); // Filter for image files
+                images = await response.json();
 
-                // Shuffle the images array
                 images.sort(() => Math.random() - 0.5);
                 displayImages();
             } catch (error) {
