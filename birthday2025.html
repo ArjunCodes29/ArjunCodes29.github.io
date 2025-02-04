@@ -46,6 +46,45 @@
         a {
             color: #000000;
         }
+        .photo-montage {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative; /* Added for overlapping */
+        }
+        .montage-image {
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease; /* Ensure smooth transition for scale effect */
+            position: relative; /* Added for overlapping */
+            z-index: 1; /* Default z-index */
+            max-width: 200px; /* Increased maximum width for images */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Prevent distortion */
+        }
+        .montage-image:hover {
+            transform: scale(1.2); /* Scale up on hover */
+            z-index: 10; /* Bring to front on hover */
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:disabled {
+            background-color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -80,5 +119,72 @@
         <p>Please let me know if you can make it by filling out this form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY061Py3W83hiVki3fv-9tsOWwlPONfZVB58iNGmXx-LpgTg/viewform?usp=dialog" target="_blank">RSVP Form</a></p>
     </div>
 
+    <div class="photo-montage">
+        <h2>Birthday Photo Montage</h2>
+        <div class="gallery"></div>
+        <div class="navigation">
+            <button class="button" id="prevButton">Previous</button>
+            <button class="button" id="nextButton">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const imagesPerPage = 18; // Number of images to display per chunk
+        let currentPage = 0;
+        let images = [];
+
+        async function loadImages() {
+            try {
+                const response = await fetch('pictures/bday/');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(text, 'text/html');
+                images = Array.from(htmlDocument.querySelectorAll('a'))
+                    .map(a => a.getAttribute('href'))
+                    .filter(href => /\.(JPG|jpeg|png|gif)$/.test(href)); // Filter for image files
+
+                // Shuffle the images array
+                images.sort(() => Math.random() - 0.5);
+                displayImages();
+            } catch (error) {
+                console.error('Error loading images:', error);
+            }
+        }
+
+        function displayImages() {
+            const gallery = document.querySelector('.gallery');
+            gallery.innerHTML = ''; // Clear previous images
+            const start = currentPage * imagesPerPage;
+            const end = Math.min(start + imagesPerPage, images.length); // Ensure end does not exceed total images
+            const chunk = images.slice(start, end);
+
+            chunk.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image; // Ensure this path is correct
+                imgElement.alt = 'Birthday Photo';
+                imgElement.loading = 'eager'; 
+                imgElement.className = 'montage-image';
+                imgElement.style.transform = `rotate(${Math.random() * 20 - 10}deg)`; // Random rotation
+                gallery.appendChild(imgElement);
+            });
+
+            // Update button states
+            document.getElementById('prevButton').disabled = images.length === 0; // Disable if no images
+            document.getElementById('nextButton').disabled = images.length === 0; // Disable if no images
+        }
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentPage = (currentPage - 1 + Math.ceil(images.length / imagesPerPage)) % Math.ceil(images.length / imagesPerPage);
+            displayImages();
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentPage = (currentPage + 1) % Math.ceil(images.length / imagesPerPage);
+            displayImages();
+        });
+
+        loadImages();
+    </script>
 </body>
 </html>
