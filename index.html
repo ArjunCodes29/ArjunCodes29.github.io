@@ -23,7 +23,9 @@
         }
 
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 3rem;
             border-bottom: 1px solid #eee;
             padding-bottom: 2rem;
@@ -32,21 +34,23 @@
         h1 {
             font-size: 2.5rem;
             color: #333;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             font-weight: normal;
+            flex: 1;
         }
 
         .sketch {
             font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
+            font-size: 0.6rem;
             line-height: 1.2;
             color: #888;
             white-space: pre;
             text-align: left;
-            margin: 2rem auto;
+            margin: 0;
             overflow-x: auto;
             word-break: keep-all;
             word-wrap: break-word;
+            flex-shrink: 0;
         }
 
         .content {
@@ -78,6 +82,7 @@
 
 <body>
     <header>
+        <h1>Arjun Khandelwal</h1>
         <!-- prettier-ignore-start -->
         <pre class="sketch">                  &&& &&  & &&
                 && &\/&\|& ()|/ @, &&
@@ -103,14 +108,13 @@
                       |||\/||
             , -=-~  .-^- _    -=-~  .-^- _</pre>
         <!-- prettier-ignore-end -->
-        <h1>Arjun Khandelwal</h1>
     </header>
 
     <main class="content">
 
 
         <section class="section">
-            <p>I'm currently working with Redwood Research on High stakes <a
+            <p>I'm currently working with Redwood on High stakes <a
                     href="https://www.lesswrong.com/posts/kcKrE9mzEHrdqtDpE/the-case-for-ensuring-that-powerful-ais-are-controlled">AI
                     Control</a>, looking into attack selection with Tyler
                 Tracy. </p>
