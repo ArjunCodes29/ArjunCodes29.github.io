@@ -77,12 +77,47 @@
         .home-sketch {
             margin: 2rem 0;
         }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav {
+            display: flex;
+            gap: 0.75rem;
+            margin: 0.25rem 0 0 0;
+        }
+
+        .nav a {
+            color: #777;
+            text-decoration: none;
+            padding: 0.125rem 0;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            color: #555;
+            border-bottom-color: #aaa;
+        }
+
+        .nav a.active {
+            color: #555;
+            border-bottom-color: #bbb;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Arjun Khandelwal</h1>
+        <div class="header-left">
+            <h1>Arjun Khandelwal</h1>
+            <nav class="nav">
+                <a class="active" href="index.html">Home</a>
+                <a href="now.html">Now</a>
+            </nav>
+        </div>
         <!-- prettier-ignore-start -->
         <pre class="sketch">                  &&& &&  & &&
                 && &\/&\|& ()|/ @, &&
@@ -109,6 +144,7 @@
             , -=-~  .-^- _    -=-~  .-^- _</pre>
         <!-- prettier-ignore-end -->
     </header>
+
 
     <main class="content">
 
