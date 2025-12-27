@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Now — Arjun</title>
+    <title>Redwood Research Flashcards — Take My Money — Arjun</title>
     <style>
         * {
             margin: 0;
@@ -65,6 +65,15 @@
             margin-bottom: 1rem;
         }
 
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
         .footer {
             text-align: center;
             margin-top: 4rem;
@@ -72,10 +81,6 @@
             border-top: 1px solid #eee;
             color: #888;
             font-size: 0.9rem;
-        }
-
-        .home-sketch {
-            margin: 2rem 0;
         }
 
         .header-left {
@@ -114,13 +119,18 @@
             font-weight: normal;
         }
 
-        #now-archive img {
-            max-width: 100%;
-            height: auto;
+        .back-link {
+            margin-bottom: 1rem;
         }
 
-        #now-archive figure {
-            margin: 1rem 0;
+        .back-link a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            color: #555;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -130,9 +140,9 @@
         <div class="header-left">
             <h1>Arjun Khandelwal</h1>
             <nav class="nav">
-                <a href="index.html">Home</a>
-                <a class="active" href="now.html">Now</a>
-                <a href="take-my-money/index.html">Take My Money</a>
+                <a href="../index.html">Home</a>
+                <a href="../now.html">Now</a>
+                <a class="active" href="index.html">Take My Money</a>
             </nav>
         </div>
         <!-- prettier-ignore-start -->
@@ -158,75 +168,36 @@
                       |||\/||
                       |||\/||
                       |||\/||
+                      |||\/||
             , -=-~  .-^- _    -=-~  .-^- _</pre>
         <!-- prettier-ignore-end -->
     </header>
-    <div
-        style="margin: 2rem 0; padding: 1rem; background: #fffbe7; border-radius: 8px; border-left: 6px solid #ffea70; color: #856404;">
-        <strong>TODO:</strong> Clean the page up and make it pretty<br>
-        (If you’re reading this and have suggestions, please <a href="mailto:arjunkhandelwal2901@gmail.com">let me
-            know</a>.)
-    </div>
-
 
     <main class="content">
-        <div id="now-archive"></div>
-        <noscript>
-            <p>JavaScript is required to load the archives. See:
-                <a href="now.html">Current</a> ·
-                <a href="now_2024-12-16.html">Dec 16, 2024</a> ·
-                <a href="now_2024-06-01.html">Jun 1, 2024</a>
+        <div class="back-link">
+            <a href="index.html">← Back to all bounties</a>
+        </div>
+        <section class="section">
+            <h2>Redwood Research Flashcards</h2>
+            <p>
+                Create an Anki/Remnote deck for any blogpost on the <a
+                    href="https://blog.redwoodresearch.org/">Redwood Research substack</a>. I will pay you per
+                flashcard. $0 if it's equal to or worse than what the best LLM I have access to. $1 if I decide to
+                put it into my RemNote or if I think it's good. Send me a few cards before you spend a lot of time
+                on this if you want to decrease risk. Please read <a
+                    href="https://www.supermemo.com/en/blog/twenty-rules-of-formulating-knowledge">https://www.supermemo.com/en/blog/twenty-rules-of-formulating-knowledge</a>
+                if you haven't; making good flashcards takes care and effort :)<br><br>
+                At some point, I'm planning on making my own flashcards for Redwood substack—will put a link to that
+                somewhere soon. If you make cards for a post I already carded, then I'll only pay you for the diff.
             </p>
-        </noscript>
+        </section>
     </main>
 
     <footer class="footer">
-        <p>last updated: 2025-10-17</p>
+        <p>last updated: November 19, 2025</p>
         <p><a href="https://selvaradov.net/">← rohan</a> · <a href="https://emilryd.com/">emil →</a></p>
     </footer>
-    <script>
-        const entries = [
-            { label: 'January 25, 2025 (Current)', url: 'now_2025-01-25.html' },
-            { label: 'December 16, 2024', url: 'now_2024-12-16.html' },
-            { label: 'June 1, 2024', url: 'now_2024-06-01.html' },
-        ];
-
-        function stripArchiveBlocks(mainEl) {
-            [...mainEl.querySelectorAll('h3')].forEach(h3 => {
-                if (h3.textContent.trim().toLowerCase() === 'archive') {
-                    const prev = h3.previousElementSibling;
-                    if (prev && prev.tagName === 'HR') prev.remove();
-                    const next = h3.nextElementSibling;
-                    if (next && next.tagName === 'UL') next.remove();
-                    h3.remove();
-                }
-            });
-        }
-
-        async function loadNowEntries() {
-            const container = document.getElementById('now-archive');
-            for (const entry of entries) {
-                try {
-                    const res = await fetch(entry.url);
-                    if (!res.ok) continue;
-                    const html = await res.text();
-                    const doc = new DOMParser().parseFromString(html, 'text/html');
-                    const main = doc.querySelector('main');
-                    if (!main) continue;
-                    stripArchiveBlocks(main);
-
-                    const section = document.createElement('section');
-                    section.className = 'section';
-                    section.innerHTML = `<h2>${entry.label}</h2>` + main.innerHTML;
-                    container.appendChild(section);
-                } catch (e) {
-                    // ignore
-                }
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', loadNowEntries);
-    </script>
 </body>
 
 </html>
+
