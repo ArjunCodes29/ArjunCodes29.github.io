@@ -1,5 +1,256 @@
 [
   {
+    "sha": "337bf8ec1642d467ea81fbabcea01ade2564bb14",
+    "node_id": "C_kwDOLohrnNoAKDMzN2JmOGVjMTY0MmQ0NjdlYTgxZmJhYmNlYTAxYWRlMjU2NGJiMTQ",
+    "commit": {
+      "author": {
+        "name": "Arjun",
+        "email": "82011974+ArjunCodes29@users.noreply.github.com",
+        "date": "2026-01-03T04:33:31Z"
+      },
+      "committer": {
+        "name": "Arjun",
+        "email": "82011974+ArjunCodes29@users.noreply.github.com",
+        "date": "2026-01-03T04:33:31Z"
+      },
+      "message": "Resolve merge conflict, add beta notice to time machine",
+      "tree": {
+        "sha": "afd4548d84ec4830bcaeb2a14085fbb984e836ed",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/afd4548d84ec4830bcaeb2a14085fbb984e836ed"
+      },
+      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/337bf8ec1642d467ea81fbabcea01ade2564bb14",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/337bf8ec1642d467ea81fbabcea01ade2564bb14",
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/337bf8ec1642d467ea81fbabcea01ade2564bb14",
+    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/337bf8ec1642d467ea81fbabcea01ade2564bb14/comments",
+    "author": {
+      "login": "ArjunCodes29",
+      "id": 82011974,
+      "node_id": "MDQ6VXNlcjgyMDExOTc0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ArjunCodes29",
+      "html_url": "https://github.com/ArjunCodes29",
+      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
+      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
+      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
+      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
+      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "ArjunCodes29",
+      "id": 82011974,
+      "node_id": "MDQ6VXNlcjgyMDExOTc0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ArjunCodes29",
+      "html_url": "https://github.com/ArjunCodes29",
+      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
+      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
+      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
+      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
+      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "88936e2d5324861aa306ad71191792b1a97ce75a",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/88936e2d5324861aa306ad71191792b1a97ce75a",
+        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/88936e2d5324861aa306ad71191792b1a97ce75a"
+      },
+      {
+        "sha": "2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/2c4b5b4e009b2c86391507f2761e8a34817e3a43"
+      }
+    ]
+  },
+  {
+    "sha": "88936e2d5324861aa306ad71191792b1a97ce75a",
+    "node_id": "C_kwDOLohrnNoAKDg4OTM2ZTJkNTMyNDg2MWFhMzA2YWQ3MTE5MTc5MmIxYTk3Y2U3NWE",
+    "commit": {
+      "author": {
+        "name": "Arjun",
+        "email": "82011974+ArjunCodes29@users.noreply.github.com",
+        "date": "2026-01-03T04:31:00Z"
+      },
+      "committer": {
+        "name": "Arjun",
+        "email": "82011974+ArjunCodes29@users.noreply.github.com",
+        "date": "2026-01-03T04:31:00Z"
+      },
+      "message": "added note",
+      "tree": {
+        "sha": "cf80ca019f2fa301e6772400fbf5221ce1fdd289",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/cf80ca019f2fa301e6772400fbf5221ce1fdd289"
+      },
+      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/88936e2d5324861aa306ad71191792b1a97ce75a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/88936e2d5324861aa306ad71191792b1a97ce75a",
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/88936e2d5324861aa306ad71191792b1a97ce75a",
+    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/88936e2d5324861aa306ad71191792b1a97ce75a/comments",
+    "author": {
+      "login": "ArjunCodes29",
+      "id": 82011974,
+      "node_id": "MDQ6VXNlcjgyMDExOTc0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ArjunCodes29",
+      "html_url": "https://github.com/ArjunCodes29",
+      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
+      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
+      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
+      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
+      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "ArjunCodes29",
+      "id": 82011974,
+      "node_id": "MDQ6VXNlcjgyMDExOTc0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ArjunCodes29",
+      "html_url": "https://github.com/ArjunCodes29",
+      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
+      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
+      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
+      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
+      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b9c31082894d77ebfe1c02d3e6ca17a3b32d8590",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/b9c31082894d77ebfe1c02d3e6ca17a3b32d8590",
+        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/b9c31082894d77ebfe1c02d3e6ca17a3b32d8590"
+      }
+    ]
+  },
+  {
+    "sha": "2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+    "node_id": "C_kwDOLohrnNoAKDJjNGI1YjRlMDA5YjJjODYzOTE1MDdmMjc2MWU4YTM0ODE3ZTNhNDM",
+    "commit": {
+      "author": {
+        "name": "github-actions[bot]",
+        "email": "github-actions[bot]@users.noreply.github.com",
+        "date": "2026-01-03T04:23:00Z"
+      },
+      "committer": {
+        "name": "github-actions[bot]",
+        "email": "github-actions[bot]@users.noreply.github.com",
+        "date": "2026-01-03T04:23:00Z"
+      },
+      "message": "chore: update commits.json [skip ci]",
+      "tree": {
+        "sha": "172902e1a9524706ddced852241574bde6db2ca1",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/172902e1a9524706ddced852241574bde6db2ca1"
+      },
+      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/2c4b5b4e009b2c86391507f2761e8a34817e3a43",
+    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/2c4b5b4e009b2c86391507f2761e8a34817e3a43/comments",
+    "author": {
+      "login": "github-actions[bot]",
+      "id": 41898282,
+      "node_id": "MDM6Qm90NDE4OTgyODI=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+      "html_url": "https://github.com/apps/github-actions",
+      "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "github-actions[bot]",
+      "id": 41898282,
+      "node_id": "MDM6Qm90NDE4OTgyODI=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+      "html_url": "https://github.com/apps/github-actions",
+      "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b9c31082894d77ebfe1c02d3e6ca17a3b32d8590",
+        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/b9c31082894d77ebfe1c02d3e6ca17a3b32d8590",
+        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/b9c31082894d77ebfe1c02d3e6ca17a3b32d8590"
+      }
+    ]
+  },
+  {
     "sha": "b9c31082894d77ebfe1c02d3e6ca17a3b32d8590",
     "node_id": "C_kwDOLohrnNoAKGI5YzMxMDgyODk0ZDc3ZWJmZTFjMDJkM2U2Y2ExN2EzYjMyZDg1OTA",
     "commit": {
@@ -7965,252 +8216,6 @@
         "sha": "53d1d29e9ea208123ac03ffeb80d034c64ad4438",
         "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/53d1d29e9ea208123ac03ffeb80d034c64ad4438",
         "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/53d1d29e9ea208123ac03ffeb80d034c64ad4438"
-      }
-    ]
-  },
-  {
-    "sha": "53d1d29e9ea208123ac03ffeb80d034c64ad4438",
-    "node_id": "C_kwDOLohrnNoAKDUzZDFkMjllOWVhMjA4MTIzYWMwM2ZmZWI4MGQwMzRjNjRhZDQ0Mzg",
-    "commit": {
-      "author": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-05-15T20:21:42Z"
-      },
-      "committer": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-05-15T20:21:42Z"
-      },
-      "message": "added history section\n\nthought would be cool - mainly for myself lol, i can also start giving detailed descriptions and commits which may be cool",
-      "tree": {
-        "sha": "52861feb326527907f74aca7a0fb2246cfbd2e61",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/52861feb326527907f74aca7a0fb2246cfbd2e61"
-      },
-      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/53d1d29e9ea208123ac03ffeb80d034c64ad4438",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/53d1d29e9ea208123ac03ffeb80d034c64ad4438",
-    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/53d1d29e9ea208123ac03ffeb80d034c64ad4438",
-    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/53d1d29e9ea208123ac03ffeb80d034c64ad4438/comments",
-    "author": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "beb7d7d37993c9f6b3999afcef992965917b66be",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/beb7d7d37993c9f6b3999afcef992965917b66be",
-        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/beb7d7d37993c9f6b3999afcef992965917b66be"
-      }
-    ]
-  },
-  {
-    "sha": "beb7d7d37993c9f6b3999afcef992965917b66be",
-    "node_id": "C_kwDOLohrnNoAKGJlYjdkN2QzNzk5M2M5ZjZiMzk5OWFmY2VmOTkyOTY1OTE3YjY2YmU",
-    "commit": {
-      "author": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-05-15T20:19:40Z"
-      },
-      "committer": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-05-15T20:19:40Z"
-      },
-      "message": "Made one line introduction more concrete\n\nWith my work for Joel Becker at METR I feel as though I am actually helping people make AI safer instead of just upskilling so in the future I can help. I am still trying to upskill in technical alignment, currently working through the arena course.",
-      "tree": {
-        "sha": "8840529ea5056eebfadb56616e88af08fd4b0ce0",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/8840529ea5056eebfadb56616e88af08fd4b0ce0"
-      },
-      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/beb7d7d37993c9f6b3999afcef992965917b66be",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/beb7d7d37993c9f6b3999afcef992965917b66be",
-    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/beb7d7d37993c9f6b3999afcef992965917b66be",
-    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/beb7d7d37993c9f6b3999afcef992965917b66be/comments",
-    "author": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f"
-      }
-    ]
-  },
-  {
-    "sha": "0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-    "node_id": "C_kwDOLohrnNoAKDBmYjVmZGU4ZGJiNGY1YTQyNDYzY2Q4YmU1MThhZDc2Yzg1ZGI0OWY",
-    "commit": {
-      "author": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-04-13T19:29:24Z"
-      },
-      "committer": {
-        "name": "ArjunCodes29",
-        "email": "arjun051161@greenwoodhigh.edu.in",
-        "date": "2024-04-13T19:29:24Z"
-      },
-      "message": "Update index.html",
-      "tree": {
-        "sha": "e8e7f98af89f55a97ec76bee4c115f26befebe4f",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/trees/e8e7f98af89f55a97ec76bee4c115f26befebe4f"
-      },
-      "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/git/commits/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f",
-    "comments_url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/0fb5fde8dbb4f5a42463cd8be518ad76c85db49f/comments",
-    "author": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "ArjunCodes29",
-      "id": 82011974,
-      "node_id": "MDQ6VXNlcjgyMDExOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/82011974?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ArjunCodes29",
-      "html_url": "https://github.com/ArjunCodes29",
-      "followers_url": "https://api.github.com/users/ArjunCodes29/followers",
-      "following_url": "https://api.github.com/users/ArjunCodes29/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ArjunCodes29/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ArjunCodes29/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ArjunCodes29/subscriptions",
-      "organizations_url": "https://api.github.com/users/ArjunCodes29/orgs",
-      "repos_url": "https://api.github.com/users/ArjunCodes29/repos",
-      "events_url": "https://api.github.com/users/ArjunCodes29/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ArjunCodes29/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "1d24fb8b6c427587564300b019794b70f33fa4de",
-        "url": "https://api.github.com/repos/ArjunCodes29/ArjunCodes29.github.io/commits/1d24fb8b6c427587564300b019794b70f33fa4de",
-        "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/1d24fb8b6c427587564300b019794b70f33fa4de"
       }
     ]
   }
