@@ -1,0 +1,102 @@
+[
+  {
+    "sha": "660f4328a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+    "commit": {
+      "message": "idea for commits time machine page",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-29T12:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/660f432"
+  },
+  {
+    "sha": "225c02a8b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6",
+    "commit": {
+      "message": "Update index.html",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-28T18:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/225c02a"
+  },
+  {
+    "sha": "1f12db08c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+    "commit": {
+      "message": "added comming soon section",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-28T14:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/1f12db0"
+  },
+  {
+    "sha": "673196f8d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6",
+    "commit": {
+      "message": "claude fixed slow loading images by compression",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-27T10:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/673196f"
+  },
+  {
+    "sha": "afdbeeb8e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6",
+    "commit": {
+      "message": "cleaned hyperlink",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-26T16:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/afdbeeb"
+  },
+  {
+    "sha": "cec66e78f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6",
+    "commit": {
+      "message": "added form",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-26T14:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/cec66e7"
+  },
+  {
+    "sha": "a311dba8a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+    "commit": {
+      "message": "added music bounty",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-26T12:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/a311dba"
+  },
+  {
+    "sha": "5e3c1a28b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6",
+    "commit": {
+      "message": "a beautiful refactor",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-12-25T10:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/5e3c1a2"
+  },
+  {
+    "sha": "8f2d4b18c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+    "commit": {
+      "message": "initial commit",
+      "author": {
+        "name": "Arjun",
+        "date": "2025-11-01T09:00:00Z"
+      }
+    },
+    "html_url": "https://github.com/ArjunCodes29/ArjunCodes29.github.io/commit/8f2d4b1"
+  }
+]
+
