@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Machine | Arjun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #444;
+            background-color: #fefefe;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0;
+            font-weight: normal;
+            flex: 1;
+        }
+
+        .sketch {
+            font-family: 'Courier New', monospace;
+            font-size: 0.6rem;
+            line-height: 1.2;
+            color: #888;
+            white-space: pre;
+            text-align: left;
+            margin: 0;
+            overflow-x: auto;
+            word-break: keep-all;
+            word-wrap: break-word;
+            flex-shrink: 0;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav {
+            display: flex;
+            gap: 0.75rem;
+            margin: 0.25rem 0 0 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #777;
+            text-decoration: none;
+            padding: 0.125rem 0;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            color: #555;
+            border-bottom-color: #aaa;
+        }
+
+        .nav a.active {
+            color: #555;
+            border-bottom-color: #bbb;
+        }
+
+        .content {
+            margin: 2rem 0;
+        }
+
+        .intro {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Time Machine Specific Styles */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .sort-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .sort-btn {
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #666;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .sort-btn:hover {
+            border-color: #bbb;
+            color: #444;
+        }
+
+        .sort-btn.active {
+            background: #f5f5f5;
+            border-color: #aaa;
+            color: #333;
+        }
+
+        .commits-list {
+            list-style: none;
+        }
+
+        .commit-item {
+            padding: 1.25rem;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+            background: #fff;
+        }
+
+        .commit-item:hover {
+            border-color: #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .commit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .commit-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .commit-message {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+
+        .commit-message a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .commit-message a:hover {
+            color: #0066cc;
+        }
+
+        .commit-meta {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .commit-sha {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #aaa;
+            margin-left: 0.5rem;
+        }
+
+        .voting {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .vote-btn {
+            width: 32px;
+            height: 28px;
+            border: 1px solid #eee;
+            background: #fafafa;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #999;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vote-btn:hover {
+            background: #f0f0f0;
+            border-color: #ddd;
+            color: #666;
+        }
+
+        .vote-btn.upvoted {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            color: #4caf50;
+        }
+
+        .vote-btn.downvoted {
+            background: #ffebee;
+            border-color: #ef9a9a;
+            color: #f44336;
+        }
+
+        .vote-count {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #666;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .vote-count.positive {
+            color: #4caf50;
+        }
+
+        .vote-count.negative {
+            color: #f44336;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #eee;
+            border-top-color: #999;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            text-align: center;
+            padding: 2rem;
+            color: #c62828;
+            background: #ffebee;
+            border-radius: 6px;
+        }
+
+        /* Preview Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .modal-title {
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .modal-title span {
+            color: #999;
+            font-size: 0.85rem;
+            margin-left: 0.75rem;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .modal-close:hover {
+            background: #eee;
+            color: #666;
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-footer {
+            padding: 0.75rem 1.25rem;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .modal-footer a {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Hourglass ASCII art */
+        .hourglass {
+            font-family: 'Courier New', monospace;
+            font-size: 0.5rem;
+            line-height: 1.1;
+            color: #999;
+            white-space: pre;
+        }
+
+        @media (max-width: 600px) {
+            .sketch, .hourglass {
+                display: none;
+            }
+            
+            .commit-header {
+                flex-direction: column;
+            }
+            
+            .voting {
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Arjun Khandelwal</h1>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="now.html">Now</a>
+                <a href="take-my-money/index.html">Take My Money</a>
+                <a class="active" href="time-machine.html">Time Machine</a>
+            </nav>
+        </div>
+        <!-- prettier-ignore-start -->
+        <pre class="hourglass">    ___
+   /   \
+   |   |
+   |   |
+   \___/
+  /     \
+ /       \
+|  .   .  |
+|   \./.  |
+|    V    |
+|   /:\   |
+|  / : \  |
+| /  :  \ |
+|/   :   \|
+|\   :   /|
+| \  :  / |
+|  \ : /  |
+|   \:/   |
+|    ^    |
+|   /.\   |
+|  '   '  |
+ \       /
+  \_____/
+   |   |
+   |   |
+   \___/</pre>
+        <!-- prettier-ignore-end -->
+    </header>
+
+    <main class="content">
+        <div class="intro">
+            <p>Travel through time and see how this website has evolved. Click any commit to preview that version. 
+               Vote for your favorites!</p>
+        </div>
+
+        <div class="controls">
+            <span class="sort-label">Sort by:</span>
+            <button class="sort-btn active" data-sort="time" onclick="setSortMode('time')">Recent</button>
+            <button class="sort-btn" data-sort="votes" onclick="setSortMode('votes')">Most Voted</button>
+            <button class="sort-btn" onclick="forceRefresh()" title="Force refresh from GitHub">↻ Refresh</button>
+        </div>
+
+        <div id="commits-container">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading commits...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <span id="modal-commit-msg"></span>
+                    <span id="modal-commit-date"></span>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="preview-frame" sandbox="allow-same-origin allow-scripts"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a id="github-link" href="#" target="_blank">View on GitHub →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Votes are stored locally in your browser</p>
+        <p><a href="https://selvaradov.net/">← rohan</a> · <a href="https://emilryd.com/">emil →</a></p>
+    </footer>
+
+    <script>
+        const REPO_OWNER = 'ArjunCodes29';
+        const REPO_NAME = 'ArjunCodes29.github.io';
+        const STORAGE_KEY = 'timemachine_votes';
+        const COMMITS_CACHE_KEY = 'timemachine_commits';
+        const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
+        
+        let commits = [];
+        let votes = {};
+        let currentSort = 'time';
+
+        // Fallback commits data (used when API is rate limited and no cache exists)
+        const FALLBACK_COMMITS = [
+            { sha: '660f432', commit: { message: 'idea for commits time machine page', author: { date: '2024-12-29T00:00:00Z' } } },
+            { sha: '225c02a', commit: { message: 'Update index.html', author: { date: '2024-12-28T00:00:00Z' } } },
+            { sha: '1f12db0', commit: { message: 'added comming soon section', author: { date: '2024-12-28T00:00:00Z' } } },
+            { sha: '673196f', commit: { message: 'claude fixed slow loading images by compression', author: { date: '2024-12-27T00:00:00Z' } } },
+            { sha: 'afdbeeb', commit: { message: 'cleaned hyperlink', author: { date: '2024-12-26T00:00:00Z' } } },
+            { sha: 'cec66e7', commit: { message: 'added form', author: { date: '2024-12-26T00:00:00Z' } } },
+            { sha: 'a311dba', commit: { message: 'added music bounty', author: { date: '2024-12-26T00:00:00Z' } } },
+            { sha: '5e3c1a2', commit: { message: 'a beautiful refactor', author: { date: '2024-12-25T00:00:00Z' } } },
+            { sha: '8f2d4b1', commit: { message: 'initial commit', author: { date: '2024-11-01T00:00:00Z' } } },
+        ];
+
+        // Load votes from localStorage
+        function loadVotes() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    votes = JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error('Error loading votes:', e);
+                votes = {};
+            }
+        }
+
+        // Save votes to localStorage
+        function saveVotes() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
+            } catch (e) {
+                console.error('Error saving votes:', e);
+            }
+        }
+
+        // Load commits from cache
+        function loadCachedCommits() {
+            try {
+                const cached = localStorage.getItem(COMMITS_CACHE_KEY);
+                if (cached) {
+                    const { data, timestamp } = JSON.parse(cached);
+                    if (Date.now() - timestamp < CACHE_DURATION) {
+                        return data;
+                    }
+                }
+            } catch (e) {
+                console.error('Error loading cached commits:', e);
+            }
+            return null;
+        }
+
+        // Save commits to cache
+        function cacheCommits(data) {
+            try {
+                localStorage.setItem(COMMITS_CACHE_KEY, JSON.stringify({
+                    data,
+                    timestamp: Date.now()
+                }));
+            } catch (e) {
+                console.error('Error caching commits:', e);
+            }
+        }
+
+        // Get vote data for a commit
+        function getVoteData(sha) {
+            if (!votes[sha]) {
+                votes[sha] = { score: 0, userVote: 0 };
+            }
+            return votes[sha];
+        }
+
+        // Handle voting
+        function vote(sha, direction) {
+            const data = getVoteData(sha);
+            const oldVote = data.userVote;
+            
+            if (direction === oldVote) {
+                // Clicking same button removes vote
+                data.score -= oldVote;
+                data.userVote = 0;
+            } else {
+                // Remove old vote, add new vote
+                data.score -= oldVote;
+                data.score += direction;
+                data.userVote = direction;
+            }
+            
+            saveVotes();
+            
+            if (currentSort === 'votes') {
+                renderCommits();
+            } else {
+                updateCommitUI(sha);
+            }
+        }
+
+        // Update just one commit's UI
+        function updateCommitUI(sha) {
+            const data = getVoteData(sha);
+            const item = document.querySelector(`[data-sha="${sha}"]`);
+            if (!item) return;
+
+            const upBtn = item.querySelector('.vote-up');
+            const downBtn = item.querySelector('.vote-down');
+            const count = item.querySelector('.vote-count');
+
+            upBtn.classList.toggle('upvoted', data.userVote === 1);
+            downBtn.classList.toggle('downvoted', data.userVote === -1);
+            
+            count.textContent = data.score;
+            count.classList.toggle('positive', data.score > 0);
+            count.classList.toggle('negative', data.score < 0);
+        }
+
+        // Set sort mode
+        function setSortMode(mode) {
+            currentSort = mode;
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.sort === mode);
+            });
+            renderCommits();
+        }
+
+        // Format date
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Format relative time
+        function formatRelativeTime(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            
+            if (diffDays === 0) return 'today';
+            if (diffDays === 1) return 'yesterday';
+            if (diffDays < 7) return `${diffDays} days ago`;
+            if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+            if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+            return `${Math.floor(diffDays / 365)} years ago`;
+        }
+
+        // Open preview modal
+        function openPreview(sha, message, date) {
+            const modal = document.getElementById('modal');
+            const frame = document.getElementById('preview-frame');
+            const msgEl = document.getElementById('modal-commit-msg');
+            const dateEl = document.getElementById('modal-commit-date');
+            const githubLink = document.getElementById('github-link');
+
+            // Truncate message if too long
+            const displayMsg = message.length > 60 ? message.substring(0, 60) + '...' : message;
+            msgEl.textContent = displayMsg;
+            dateEl.textContent = formatDate(date);
+
+            // Use rawcdn.githack.com to serve the old version
+            frame.src = `https://rawcdn.githack.com/${REPO_OWNER}/${REPO_NAME}/${sha}/index.html`;
+            
+            githubLink.href = `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/${sha}`;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal(event) {
+            if (event && event.target !== document.getElementById('modal')) return;
+            
+            const modal = document.getElementById('modal');
+            const frame = document.getElementById('preview-frame');
+            
+            modal.classList.remove('active');
+            frame.src = 'about:blank';
+            document.body.style.overflow = '';
+        }
+
+        // Handle escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Render commits
+        function renderCommits() {
+            const container = document.getElementById('commits-container');
+            
+            let sortedCommits = [...commits];
+            
+            if (currentSort === 'votes') {
+                sortedCommits.sort((a, b) => {
+                    const scoreA = getVoteData(a.sha).score;
+                    const scoreB = getVoteData(b.sha).score;
+                    return scoreB - scoreA;
+                });
+            }
+
+            const html = `
+                <ul class="commits-list">
+                    ${sortedCommits.map(commit => {
+                        const data = getVoteData(commit.sha);
+                        const message = commit.commit.message.split('\n')[0];
+                        const date = commit.commit.author.date;
+                        const shortSha = commit.sha.substring(0, 7);
+                        
+                        return `
+                            <li class="commit-item" data-sha="${commit.sha}">
+                                <div class="commit-header">
+                                    <div class="commit-info">
+                                        <div class="commit-message">
+                                            <a onclick="openPreview('${commit.sha}', '${message.replace(/'/g, "\\'")}', '${date}')">${escapeHtml(message)}</a>
+                                        </div>
+                                        <div class="commit-meta">
+                                            ${formatRelativeTime(date)}
+                                            <span class="commit-sha">${shortSha}</span>
+                                        </div>
+                                    </div>
+                                    <div class="voting">
+                                        <button class="vote-btn vote-up ${data.userVote === 1 ? 'upvoted' : ''}" 
+                                                onclick="vote('${commit.sha}', 1)" title="Upvote">▲</button>
+                                        <span class="vote-count ${data.score > 0 ? 'positive' : ''} ${data.score < 0 ? 'negative' : ''}">${data.score}</span>
+                                        <button class="vote-btn vote-down ${data.userVote === -1 ? 'downvoted' : ''}" 
+                                                onclick="vote('${commit.sha}', -1)" title="Downvote">▼</button>
+                                    </div>
+                                </div>
+                            </li>
+                        `;
+                    }).join('')}
+                </ul>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Fetch commits from GitHub API (with caching)
+        async function fetchCommits() {
+            const container = document.getElementById('commits-container');
+            
+            // Try to load from cache first
+            const cached = loadCachedCommits();
+            if (cached) {
+                commits = cached;
+                renderCommits();
+                return;
+            }
+            
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/commits?per_page=100`
+                );
+                
+                if (!response.ok) {
+                    // If rate limited, show helpful message
+                    if (response.status === 403) {
+                        throw new Error('GitHub API rate limit exceeded. Try again in an hour, or refresh the page to use cached data.');
+                    }
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                
+                commits = await response.json();
+                cacheCommits(commits); // Cache for future use
+                renderCommits();
+                
+            } catch (error) {
+                console.error('Error fetching commits:', error);
+                
+                // Try to show stale cache if available
+                try {
+                    const staleCache = localStorage.getItem(COMMITS_CACHE_KEY);
+                    if (staleCache) {
+                        const { data } = JSON.parse(staleCache);
+                        commits = data;
+                        renderCommits();
+                        container.insertAdjacentHTML('afterbegin', `
+                            <div style="background: #fff3e0; padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; color: #e65100; font-size: 0.9rem;">
+                                ⚠️ Showing cached data. ${error.message}
+                            </div>
+                        `);
+                        return;
+                    }
+                } catch (e) {}
+                
+                // Use fallback data as last resort
+                commits = FALLBACK_COMMITS;
+                renderCommits();
+                container.insertAdjacentHTML('afterbegin', `
+                    <div style="background: #fff3e0; padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; color: #e65100; font-size: 0.9rem;">
+                        ⚠️ Using sample data (API rate limited). Real commits will load once the limit resets (~1 hour).
+                    </div>
+                `);
+            }
+        }
+
+        // Force refresh (clear cache and fetch)
+        function forceRefresh() {
+            localStorage.removeItem(COMMITS_CACHE_KEY);
+            document.getElementById('commits-container').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading commits...</p>
+                </div>
+            `;
+            fetchCommits();
+        }
+
+        // Initialize
+        loadVotes();
+        fetchCommits();
+    </script>
+</body>
+
+</html>
+
