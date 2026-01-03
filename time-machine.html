@@ -278,7 +278,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .error {
@@ -391,14 +393,16 @@
         }
 
         @media (max-width: 600px) {
-            .sketch, .hourglass {
+
+            .sketch,
+            .hourglass {
                 display: none;
             }
-            
+
             .commit-header {
                 flex-direction: column;
             }
-            
+
             .voting {
                 flex-direction: row;
                 gap: 0.5rem;
@@ -450,8 +454,7 @@
 
     <main class="content">
         <div class="intro">
-            <p>Travel through time and see how this website has evolved. Click any commit to preview that version. 
-               Vote for your favorites!</p>
+            <p>(Beta, asked cursor to make the time machine, might make better later)</p>
         </div>
 
         <div class="controls">
@@ -496,7 +499,7 @@
         const REPO_OWNER = 'ArjunCodes29';
         const REPO_NAME = 'ArjunCodes29.github.io';
         const STORAGE_KEY = 'timemachine_votes';
-        
+
         let commits = [];
         let votes = {};
         let currentSort = 'time';
@@ -548,7 +551,7 @@
         function vote(sha, direction) {
             const data = getVoteData(sha);
             const oldVote = data.userVote;
-            
+
             if (direction === oldVote) {
                 // Clicking same button removes vote
                 data.score -= oldVote;
@@ -559,9 +562,9 @@
                 data.score += direction;
                 data.userVote = direction;
             }
-            
+
             saveVotes();
-            
+
             if (currentSort === 'votes') {
                 renderCommits();
             } else {
@@ -581,7 +584,7 @@
 
             upBtn.classList.toggle('upvoted', data.userVote === 1);
             downBtn.classList.toggle('downvoted', data.userVote === -1);
-            
+
             count.textContent = data.score;
             count.classList.toggle('positive', data.score > 0);
             count.classList.toggle('negative', data.score < 0);
@@ -609,7 +612,7 @@
             const now = new Date();
             const diffMs = now - date;
             const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-            
+
             if (diffDays === 0) return 'today';
             if (diffDays === 1) return 'yesterday';
             if (diffDays < 7) return `${diffDays} days ago`;
@@ -633,7 +636,7 @@
 
             // Use rawcdn.githack.com to serve the old version
             frame.src = `https://rawcdn.githack.com/${REPO_OWNER}/${REPO_NAME}/${sha}/index.html`;
-            
+
             githubLink.href = `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/${sha}`;
 
             modal.classList.add('active');
@@ -643,10 +646,10 @@
         // Close modal
         function closeModal(event) {
             if (event && event.target !== document.getElementById('modal')) return;
-            
+
             const modal = document.getElementById('modal');
             const frame = document.getElementById('preview-frame');
-            
+
             modal.classList.remove('active');
             frame.src = 'about:blank';
             document.body.style.overflow = '';
@@ -660,9 +663,9 @@
         // Render commits
         function renderCommits() {
             const container = document.getElementById('commits-container');
-            
+
             let sortedCommits = [...commits];
-            
+
             if (currentSort === 'votes') {
                 sortedCommits.sort((a, b) => {
                     const scoreA = getVoteData(a.sha).score;
@@ -674,12 +677,12 @@
             const html = `
                 <ul class="commits-list">
                     ${sortedCommits.map(commit => {
-                        const data = getVoteData(commit.sha);
-                        const message = commit.commit.message.split('\n')[0];
-                        const date = commit.commit.author.date;
-                        const shortSha = commit.sha.substring(0, 7);
-                        
-                        return `
+                const data = getVoteData(commit.sha);
+                const message = commit.commit.message.split('\n')[0];
+                const date = commit.commit.author.date;
+                const shortSha = commit.sha.substring(0, 7);
+
+                return `
                             <li class="commit-item" data-sha="${commit.sha}">
                                 <div class="commit-header">
                                     <div class="commit-info">
@@ -701,7 +704,7 @@
                                 </div>
                             </li>
                         `;
-                    }).join('')}
+            }).join('')}
                 </ul>
             `;
 
@@ -718,21 +721,21 @@
         // Fetch commits from static JSON file (generated by GitHub Action)
         async function fetchCommits() {
             const container = document.getElementById('commits-container');
-            
+
             try {
                 // Load from static commits.json file - no API rate limits!
                 const response = await fetch('commits.json');
-                
+
                 if (!response.ok) {
                     throw new Error('Failed to load commits.json');
                 }
-                
+
                 commits = await response.json();
                 renderCommits();
-                
+
             } catch (error) {
                 console.error('Error loading commits:', error);
-                
+
                 // Use fallback data as last resort
                 commits = FALLBACK_COMMITS;
                 renderCommits();
@@ -751,4 +754,3 @@
 </body>
 
 </html>
-
